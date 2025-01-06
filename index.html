@@ -114,10 +114,11 @@
   </div>
 
   <script>
-    let count = 0;
+    let count = 0;  // Contador de clics en el botón "Sí"
+    let gifActivated = false;  // Variable que verifica si el GIF debe ser activado
 
     document.getElementById("yes").onclick = function() {
-      count++;
+      count++;  // Incrementar el contador al presionar "Sí"
 
       const noButton = document.getElementById("no");
       const yesButton = document.getElementById("yes");
@@ -131,21 +132,25 @@
       noButton.style.fontSize = `${currentFontSizeNo + 6}px`;
       noButton.style.padding = `${currentPaddingNo + 5}px ${currentPaddingNo + 10}px`;
 
+      // Loop 1
       if (count === 1) {
         document.getElementById("response").innerHTML = "¿Estás seguro?";
         document.getElementById("response").style.color = "blue";
         document.getElementById("image-container").innerHTML = '<img src="img1.jpeg" alt="Imagen 1">';
       }
+      // Loop 2
       else if (count === 2) {
         document.getElementById("response").innerHTML = "Seguro, ¿seguro?";
         document.getElementById("response").style.color = "green";
         document.getElementById("image-container").innerHTML = '<img src="img2.jpeg" alt="Imagen 2">';
       }
+      // Loop 3
       else if (count === 3) {
         document.getElementById("response").innerHTML = "¡Pero MUY SEGURO????";
         document.getElementById("response").style.color = "orange";
         document.getElementById("image-container").innerHTML = '<img src="img3.jpg" alt="Imagen 3">';
       }
+      // Loop 4
       else if (count === 4) {
         document.getElementById("response").innerHTML = "Bueno...";
         document.getElementById("response").style.color = "red";
@@ -163,19 +168,22 @@
 
         document.getElementById("image-container").innerHTML = '<img src="img4.jpeg" alt="Imagen 4">';
       }
+      // Loop 5
       else if (count === 5) {
         document.getElementById("response").innerHTML = "Entonces ya somos novios <3";
         document.getElementById("response").style.color = "purple";
         document.getElementById("image-container").innerHTML = '<img src="img5.jpeg" alt="Imagen 5">';
       }
+      // Loop 6
       else if (count === 6) {
         document.getElementById("response").innerHTML = "Nimodo, ahora me tienes que aguantar para toda la vida @w@";
         document.getElementById("response").style.color = "purple";
         document.getElementById("image-container").innerHTML = '<img src="img6.jpeg" alt="Imagen 6">';
-        }
+      }
 
-        // Mostrar el GIF de pantalla completa
-        document.getElementById("full-screen-gif").style.display = "flex";
+      // Mostrar el GIF después de presionar el botón por séptima vez
+      if (count === 7) {
+        document.getElementById("full-screen-gif").style.display = "flex";  // Mostrar el GIF
       }
     };
 
